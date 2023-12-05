@@ -1,16 +1,18 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 import { Header } from './Header';
+import { Footer } from './Footer';
 
 export const Layout = () => {
   return (
     <div className="wrapper">
       <Header />
-      <main>
-        <div className="container">
+      <div className="container">
+        <main>
           <Outlet />
-        </div>
-      </main>
+        </main>{' '}
+        <Footer />
+      </div>
     </div>
   );
 };

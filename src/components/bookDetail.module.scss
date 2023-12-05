@@ -1,0 +1,115 @@
+@import '../SCSS/func';
+
+.bookDetail {
+  display: flex;
+  margin-top: 40px;
+  gap: 50px;
+  @media (max-width: 625px) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.cover {
+  max-width: 324px;
+  max-height: 490px;
+  @media (max-width: 625px) {
+    max-width: 250px;
+    max-height: auto;
+  }
+}
+.coverImg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.detail {
+  flex: 0 1 67%;
+  @media (max-width: 625px) {
+  }
+}
+.header {
+  position: relative;
+  padding-right: 47px;
+}
+
+.bookmarkPosition {
+  position: absolute;
+  top: 0;
+  right: 42px;
+}
+
+.author {
+  padding: 20px;
+  border: 2px dashed black;
+  border-radius: 20px;
+  box-shadow: 6px 6px 0 #676767;
+  font-size: rem(16);
+}
+.description {
+  margin-top: 25px;
+  padding: 20px;
+  border: 2px dashed black;
+  border-radius: 20px;
+  box-shadow: 6px 6px 0 #676767;
+  font-size: rem(16);
+}
+.additionInfo {
+  margin-top: 30px;
+}
+.language,
+.copies {
+  margin: 10px 0 10px 0;
+  font-size: rem(20);
+  font-weight: 600;
+}
+.text {
+  padding-left: 30px;
+  font-weight: 400;
+}
+
+.btnPosition {
+  width: 295px;
+  height: 54px;
+  margin-left: auto;
+  margin-right: 0;
+  @media (max-width: 995px) {
+    width: 200px;
+    height: 45px;
+  }
+  @media (max-width: 625px) {
+    margin-right: auto;
+  }
+}
+
+.moreBooks {
+  margin-top: 70px;
+  @media (max-width: 900px) {
+    margin-top: 40px;
+  }
+}
+.list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(150px, 200px));
+
+  justify-content: space-evenly;
+  gap: 30px;
+  margin-top: 30px;
+  // padding-left: 50px;
+  //padding-right: 50px;
+  // flex-wrap: wrap;
+  @media (max-width: 755px) {
+    grid-template-columns: repeat(3, minmax(100px, 150px));
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  @media (max-width: 580px) {
+    grid-template-columns: repeat(2, minmax(100px, 150px));
+    // padding-left: 10px;
+    //padding-right: 10px;
+  }
+}
+
+.item {
+  justify-self: center;
+}

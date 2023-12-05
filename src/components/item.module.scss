@@ -23,35 +23,36 @@
   transform: translateY(-5px);
   // transition: all 2s ease-in-out;
 }
-.btnBookamrk {
+
+.bookmarkPosition {
   position: absolute;
   top: 7px;
-  right: 17px;
-  width: 45px;
-  height: 37px;
-  padding: 5px;
-  border-radius: 17px;
-  background-color: #ffffff;
-  fill: none;
-  cursor: pointer;
-
-  transition: background-color 0.2s ease-in-out;
+  right: 65px;
 }
+// .btnBookamrk {
+//   position: absolute;
+//   top: 7px;
+//   right: 17px;
+//   width: 45px;
+//   height: 37px;
+//   padding: 5px;
+//   border-radius: 17px;
+//   background-color: #ffffff;
+//   fill: none;
+//   cursor: pointer;
 
-.btnBookamrk:active {
-  top: 10px;
-  right: 7px;
-}
+//   transition: background-color 0.2s ease-in-out;
+// }
 
-.btnBookamrk:hover {
-  background-color: $color-main-dark;
-}
+// .btnBookamrk:active {
+//   top: 10px;
+//   right: 7px;
+// }
+
+// .btnBookamrk:hover {
+//   background-color: $color-main-dark;
+// }
 .bookmarkImg {
 }
 .btnItem {
-  // @media (max-width: 715px) {
-  //   font-size: 1rem;
-  //   // width: 100px;
-  //   height: 40px;
-  // }
 }

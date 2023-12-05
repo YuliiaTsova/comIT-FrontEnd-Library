@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import styles from './App.module.scss';
 import { Layout } from './components/Layout';
 import { HomePage } from './pages/HomePage';
+import { BookPage } from './pages/BookPage';
 
 import { Route, Routes } from 'react-router-dom';
 
@@ -14,6 +15,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route path="" element={<HomePage />} />
+        <Route path="/book/:id" element={<BookPage />} />
 
         {/* <Route path="cart" element={<CartPage />} />
       <Route path="pizza/:id" element={<PizzaDetailBlock />} />

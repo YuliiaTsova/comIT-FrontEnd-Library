@@ -1,14 +1,16 @@
 import style from './item.module.scss';
 import cover from '../assets/img/coverbook.jpg';
 import bookmark from '../assets/img/bookmark.svg';
+import { ButtonBookmark } from './ButtonBookmark';
+import { ButtonHold } from './ButtonHold';
 
 export const Item = () => {
   return (
     <article className={style.item} aria-label="book item">
       {/* <Link to={`/pizza/${props.id}`}></Link> */}
       <img src={cover} alt="book cover" className={style.cover} />
-      <button className={`${style.btnBookamrk} btnReset`} aria-label="bookmark button">
-        {/* <img src={bookmark} alt="" className={style.bookmarkImg} /> */}
+      {/* <button className={`${style.btnBookamrk} btnReset`} aria-label="bookmark button">
+       
         <svg
           className={style.bookmarkImg}
           width="18"
@@ -27,8 +29,12 @@ export const Item = () => {
             />
           </g>
         </svg>
-      </button>
-      <button className={`${style.btnItem} btn`}>Place hold</button>
+      </button> */}
+      <div className={style.bookmarkPosition}>
+        <ButtonBookmark />
+      </div>
+      {/* <button className={`${style.btnItem} btn`}>Place hold</button> */}
+      <ButtonHold> Place hold</ButtonHold>
     </article>
   );
 };
