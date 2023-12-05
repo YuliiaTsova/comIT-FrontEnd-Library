@@ -1,0 +1,55 @@
+//@import '../SCSS/settings';
+//@import '../SCSS/variables';
+@import '../SCSS/func';
+
+.header {
+  margin-top: 40px;
+}
+// .container {
+//   width: 90%;
+//   margin: 0 auto;
+//   padding: 5px;
+// }
+.headerContent {
+  display: flex;
+  justify-content: space-between;
+}
+.headerLogo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 154px;
+  height: 24px;
+  box-shadow: (0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+.headerImg {
+  //margin-right: 15px;
+}
+.headerTitle {
+  //vertical-align: middle;
+  padding-right: 15px;
+  font-family: 'Unica One', sans-serif;
+  font-size: rem(24);
+}
+.navList {
+  display: flex;
+  gap: 25px;
+}
+.navItem {
+}
+.navLink {
+}
+.navImgUser {
+  width: 29px;
+  height: 25px;
+}
+
+.navImgBookmark {
+  width: 16px;
+  height: 23px;
+}
+
+.navImgCart {
+  width: 27px;
+  height: 25px;
+}

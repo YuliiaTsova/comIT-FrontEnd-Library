@@ -1,0 +1,129 @@
+@import-normalize;
+//@import './SCSS/settings';
+@import './SCSS/func';
+@import './SCSS/variables';
+
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Unica+One&display=swap');
+
+:global(*),
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+:global(a) {
+  color: inherit;
+  text-decoration: none;
+}
+
+:global(.listReset) {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+:global(h1) {
+  margin: 0;
+}
+
+:global(h2) {
+  margin: 0;
+}
+
+:global(.btnReset) {
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+:global(.heading2) {
+  margin: 0;
+  font-family: 'Unica One', sans-serif;
+  font-size: rem(36);
+  font-weight: 400;
+  @media (max-width: 716px) {
+    font-size: rem(24);
+  }
+}
+:global(.viewMore) {
+  font-family: 'Unica One', sans-serif;
+  font-size: rem(32);
+  font-weight: 400;
+  cursor: pointer;
+  position: relative;
+  @media (max-width: 716px) {
+    font-size: rem(24);
+  }
+}
+
+:global(.viewMore::before) {
+  content: '';
+  display: inline-block;
+  margin-right: 25px;
+  position: relative;
+  top: 3px;
+  background-image: url('../public/more.svg');
+  width: 28px;
+  height: 23px;
+}
+
+:global(.btn) {
+  width: 100%;
+  height: 46px;
+  background-color: $color-main;
+  border-radius: 20px;
+  font-family: 'Syne', sans-serif;
+  font-size: rem(24);
+  font-weight: 400;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  @media (max-width: 995px) {
+    font-size: rem(16);
+    height: 40px;
+  }
+}
+
+:global(.btn:hover) {
+  background-color: $color-main-dark;
+}
+
+body {
+  // background-color: $background;
+  font-family: 'Syne', sans-serif;
+  // font-family: 'Unica One', sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+}
+
+main {
+  padding-bottom: 30px;
+}
+.wrapper {
+  width: calc(100vw - 100px);
+  height: 100%;
+  background-color: #fff;
+  margin: 50px auto;
+  border-radius: 10px;
+  max-width: 1340px; //1400px;
+
+  @media (max-width: 1115px) {
+    width: calc(100vw - 40px);
+    margin-top: 20px;
+  }
+
+  @media (max-width: 500px) {
+    width: calc(100vw - 20px);
+  }
+}
+
+:global(.container) {
+  max-width: 1300px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+// :global(.colorRed) {
+//   color: green;
+// }

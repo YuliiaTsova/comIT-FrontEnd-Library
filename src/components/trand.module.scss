@@ -1,0 +1,68 @@
+.trand {
+  margin-top: 90px;
+  @media (max-width: 1024px) {
+    margin-top: 50px;
+  }
+}
+
+.title {
+  text-align: center;
+}
+
+.content {
+  //max-width: 90%;
+
+  // margin: 0 auto;
+  margin-top: 40px;
+  border: 2px dashed black;
+  border-radius: 20px;
+  padding: 20px 20px 35px 20px;
+}
+
+.more {
+  // position: relative;
+}
+// .more::before {
+//   content: '';
+//   display: inline-block;
+//   margin-right: 25px;
+//   position: relative;
+//   top: 3px;
+//   background-image: url('../../public/more.svg');
+//   width: 28px;
+//   height: 23px;
+// }
+// .list {
+//   margin-top: 30px;
+//   display: flex;
+//   justify-content: space-around;
+//   gap: 15px;
+//   // flex-wrap: wrap;
+// }
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(150px, 200px));
+
+  justify-content: space-around;
+  gap: 30px;
+  margin-top: 30px;
+  padding-left: 50px;
+  padding-right: 50px;
+  // flex-wrap: wrap;
+  @media (max-width: 755px) {
+    grid-template-columns: repeat(3, minmax(100px, 150px));
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  @media (max-width: 580px) {
+    grid-template-columns: repeat(2, minmax(100px, 150px));
+    // padding-left: 10px;
+    //padding-right: 10px;
+  }
+}
+
+.item {
+  justify-self: center;
+}

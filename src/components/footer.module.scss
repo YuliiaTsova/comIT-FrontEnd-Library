@@ -1,0 +1,75 @@
+@import '../SCSS/func';
+
+.footer {
+  margin-top: 50px;
+  padding: 30px 50px;
+  padding-bottom: 15px;
+  border-top: 1px dashed #000000;
+}
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  @media (max-width: 716px) {
+    flex-direction: column;
+  }
+}
+.mail {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.mailLink {
+  font-size: rem(20);
+}
+.mailImg {
+  width: 37px;
+  height: 23px;
+  @media (max-width: 925px) {
+    width: 30px;
+    height: 20px;
+  }
+}
+.social {
+}
+.list {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.item {
+}
+
+.socialLink {
+  svg {
+    width: 40px;
+    height: 40px;
+    @media (max-width: 925px) {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
+.socialLink:hover {
+  position: relative;
+  top: -2px;
+}
+
+.phone {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  font-family: Arial, serif;
+  font-size: rem(20);
+}
+
+.phoneImg {
+  width: 30px;
+  height: 30px;
+  @media (max-width: 925px) {
+    width: 20px;
+    height: 20px;
+  }
+}
