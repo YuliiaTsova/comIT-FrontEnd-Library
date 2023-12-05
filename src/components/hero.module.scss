@@ -31,6 +31,7 @@
 .bottom {
   display: flex;
   gap: 20px;
+  margin-top: 30px;
 }
 
 .btnExplore {
@@ -39,6 +40,7 @@
   flex-shrink: 0;
   width: 153px;
   height: 51px;
+
   padding-left: 25px;
   border-radius: 10px;
   background: url('../../public/explore.svg') no-repeat center right 25px;
@@ -56,7 +58,7 @@
 
 .line {
   display: block;
-  width: 100%;
+  width: 60%;
   //margin-top: 15px;
   vertical-align: middle;
   height: 2px;
@@ -82,6 +84,9 @@
 .picture {
   position: relative;
   height: clamp(246px, 100%, 503px);
+  @media (max-width: 500px) {
+    display: none;
+  }
 }
 
 .contentImg {

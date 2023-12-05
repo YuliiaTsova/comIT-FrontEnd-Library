@@ -3,6 +3,7 @@ import logo from '../assets/img/logo.svg';
 import user from '../assets/img/user.svg';
 import bookmark from '../assets/img/bookmark.svg';
 import cart from '../assets/img/cart.svg';
+import { Cart } from './Cart';
 
 export const Header = () => {
   return (
@@ -28,9 +29,14 @@ export const Header = () => {
                 </a>
               </li>
               <li className={styles.navItem}>
-                <a href="" className={styles.navLink}>
+                {/* <a href="" className={styles.navLink}> */}
+                <button className={`${styles.buttonCart} btnReset`}>
                   <img src={cart} alt="cart" className={styles.navImgCart} />
-                </a>
+                </button>
+                {/* <div className={`${styles.cartOverlay} ${styles.active} `}>
+                  <Cart />
+                </div> */}
+                {/* </a> */}
               </li>
             </ul>
           </nav>

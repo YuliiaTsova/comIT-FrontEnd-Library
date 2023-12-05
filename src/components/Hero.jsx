@@ -1,4 +1,5 @@
 import backgroundimg from '../assets/img/background-img.jpg';
+import { Search } from './Search';
 //import explore from '../assets/img/explore.svg';
 import styles from './hero.module.scss';
 
@@ -8,7 +9,7 @@ export const Hero = () => {
       <div className={styles.content}>
         <h1 className={styles.title}>What book are you looking for?</h1>
         <p className={styles.subTitle}>Explore our catalog and find your next read.</p>
-        {/* <Search /> */}
+        <Search />
         <div className={styles.bottom}>
           <button className={styles.btnExplore} aria-label="explore boks">
             Explore
