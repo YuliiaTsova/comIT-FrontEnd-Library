@@ -1,0 +1,51 @@
+@import '../SCSS/variables';
+@import '../SCSS/func';
+
+.selects {
+}
+
+.categories {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  align-items: center;
+  gap: 15px;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.parameters {
+  display: flex;
+  gap: 15px;
+  @media (max-width: 475px) {
+    flex-direction: column;
+  }
+}
+.selectCategories {
+  width: 200px;
+  height: 45px;
+  padding-left: 10px;
+  border-radius: 20px;
+  box-shadow: 5px 7px 0 $color-main-dark;
+  font-size: rem(16);
+  outline: none;
+  //   appearance: none;
+  //   /* safari */
+  //   -webkit-appearance: none;
+}
+
+.option {
+  font-size: rem(16);
+  border-radius: 15px;
+}
+
+.filter {
+  width: 150px;
+  height: 45px;
+  padding-left: 10px;
+  border-radius: 20px;
+  box-shadow: 5px 7px 0 $color-main-dark;
+  font-size: rem(16);
+  outline: none;
+}

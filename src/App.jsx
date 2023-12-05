@@ -4,6 +4,7 @@ import styles from './App.module.scss';
 import { Layout } from './components/Layout';
 import { HomePage } from './pages/HomePage';
 import { BookPage } from './pages/BookPage';
+import { ResultPage } from './pages/ResultPage';
 
 import { Route, Routes } from 'react-router-dom';
 
@@ -16,6 +17,7 @@ function App() {
       <Route path="/" element={<Layout />}>
         <Route path="" element={<HomePage />} />
         <Route path="/book/:id" element={<BookPage />} />
+        <Route path="/result" element={<ResultPage />} />
 
         {/* <Route path="cart" element={<CartPage />} />
       <Route path="pizza/:id" element={<PizzaDetailBlock />} />

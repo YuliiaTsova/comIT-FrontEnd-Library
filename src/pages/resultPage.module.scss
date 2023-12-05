@@ -1,0 +1,31 @@
+.searchPosition {
+  width: clamp(200px, 90%, 530px);
+  margin: 30px auto;
+}
+
+.result {
+  margin-top: 50px;
+  border-top: 1px dashed #000000;
+}
+.listItems {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(150px, 200px));
+
+  justify-content: space-around;
+  gap: 30px;
+  margin-top: 30px;
+  padding-left: 10px;
+  // flex-wrap: wrap;
+  @media (max-width: 925px) {
+    grid-template-columns: repeat(3, minmax(150px, 200px));
+  }
+
+  @media (max-width: 563px) {
+    grid-template-columns: repeat(2, minmax(150px, 200px));
+  }
+}
+
+.morePosition {
+  margin-top: 20px;
+  text-align: right;
+}
