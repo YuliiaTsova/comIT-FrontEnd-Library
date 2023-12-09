@@ -3,8 +3,12 @@ import style from './bookDetail.module.scss';
 import cover from '../assets/img/coverbook.jpg';
 import { ButtonHold } from './ButtonHold';
 import { Item } from './Item';
+import { useParams } from 'react-router-dom';
 
 export const BookDetail = () => {
+  const { id } = useParams();
+  console.log('bbbbbbbbbbbb', id);
+
   return (
     <>
       <section className={style.bookDetail}>

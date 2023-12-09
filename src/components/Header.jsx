@@ -4,6 +4,7 @@ import user from '../assets/img/user.svg';
 import bookmark from '../assets/img/bookmark.svg';
 import cart from '../assets/img/cart.svg';
 import { Cart } from './Cart';
+import { Link } from 'react-router-dom';
 
 export const Header = () => {
   return (
@@ -12,16 +13,18 @@ export const Header = () => {
         <div className={styles.headerContent}>
           <div className={styles.headerLogo}>
             <img src={logo} alt="" className={styles.headerImg} />
-            <a href="#" className={styles.headerTitle}>
+            <Link to="/" className={styles.headerTitle}>
+              {/* // <a href="#" className={styles.headerTitle}> */}
               my library
-            </a>
+              {/* </a> */}
+            </Link>
           </div>
           <nav className={styles.nav}>
             <ul className={`${styles.navList} listReset`}>
               <li className={`${styles.navItem} `}>
-                <a href="" className={styles.navLink}>
+                <Link to="/profile" className={styles.navLink}>
                   <img src={user} alt="profile" className={styles.navImgUser} />
-                </a>
+                </Link>
               </li>
               <li className={styles.navItem}>
                 <a href="" className={styles.navLink}>
