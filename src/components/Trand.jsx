@@ -3,12 +3,12 @@ import { Item } from './Item';
 import style from './trand.module.scss';
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchBooks } from '../redux/slices/bookSlice';
+import { fetchTrandBooks } from '../redux/slices/trandSlice';
 
 export const Trand = () => {
   const [books, setBooks] = useState([]);
 
-  const items = useSelector((state) => state.book.items);
+  const items = useSelector((state) => state.trand.items);
 
   // useEffect(() => {
   //   axios
@@ -24,7 +24,9 @@ export const Trand = () => {
 
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(fetchBooks());
+    // if (items.length === 0) {
+    dispatch(fetchTrandBooks());
+    // }
   }, []);
 
   console.log(items);

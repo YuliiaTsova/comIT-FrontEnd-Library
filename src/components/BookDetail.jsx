@@ -4,39 +4,56 @@ import cover from '../assets/img/coverbook.jpg';
 import { ButtonHold } from './ButtonHold';
 import { Item } from './Item';
 import { useParams } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { fetchBook } from '../redux/slices/BookSlice';
+import { Trand } from './Trand';
 
 export const BookDetail = () => {
   const { id } = useParams();
-  console.log('bbbbbbbbbbbb', id);
+
+  const item = useSelector((state) => state.book.item);
+
+  // useEffect(() => {
+  //   axios
+  //     .get('http://localhost:3000/db.json')
+  //     .then((data) => {
+  //       setBooks(data.data);
+  //       console.log(books);
+  //     })
+  //     .catch((er) => {
+  //       console.log(er.message);
+  //     });
+  // }, []);
+
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchBook(id));
+    window.scrollTo({ top: 0 });
+  }, [id]);
 
   return (
     <>
       <section className={style.bookDetail}>
         <div className={style.cover}>
-          <img src={cover} alt="book cover" className={style.coverImg} />
+          <img src={item.cover} alt="book cover" className={style.coverImg} />
           {/* <img src={props.imageUrl} alt="pizza" /> */}
         </div>
         <article className={style.detail}>
           <div className={style.header}>
-            <h2 className="heading2">A hipótese do Amoddddddd ddddd dddddddr</h2>
+            <h2 className="heading2">{item.title}</h2>
             <div className={style.bookmarkPosition}>
               <ButtonBookmark />
             </div>
           </div>
-          <p className={style.author}>Author : Author's name</p>
-          <p className={style.description}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis
-            molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla
-            accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus.
-            Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti
-            sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-          </p>
+          <p className={style.author}>Author : {item.author}</p>
+          <p className={style.description}>{item.description}</p>
           <div className={style.additionInfo}>
             <p className={style.language}>
-              Language :<span className={style.text}>English</span>
+              Language :<span className={style.text}>{item.language}</span>
             </p>
             <p className={style.copies}>
-              Copies :<span className={style.text}>2</span>
+              Copies :<span className={style.text}>{item.copies}</span>
             </p>
           </div>
           <div className={style.btnPosition}>
@@ -46,7 +63,7 @@ export const BookDetail = () => {
       </section>
       <section className={style.moreBooks}>
         <div className="viewMore">view more</div>
-        <ul className={`${style.list} listReset`}>
+        {/* <ul className={`${style.list} listReset`}>
           <li className={style.item}>
             <Item />
           </li>
@@ -59,7 +76,7 @@ export const BookDetail = () => {
           <li className={style.item}>
             <Item />
           </li>
-        </ul>
+        </ul> */}
       </section>
     </>
   );

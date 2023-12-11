@@ -58,9 +58,12 @@
   padding-left: 10px;
   // flex-wrap: wrap;
   @media (max-width: 925px) {
-    grid-template-columns: repeat(3, minmax(150px, 250px));
+    grid-template-columns: repeat(4, minmax(150px, 250px));
   }
 
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(3, minmax(150px, 250px));
+  }
   @media (max-width: 563px) {
     grid-template-columns: repeat(2, minmax(150px, 200px));
   }
