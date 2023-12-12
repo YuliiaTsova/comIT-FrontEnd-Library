@@ -1,0 +1,36 @@
+@import '../SCSS/func';
+@import '../SCSS/variables';
+
+.info {
+  margin-top: 40px;
+  padding: 20px 40px;
+  border: 2px dashed #000000;
+  border-radius: 10px;
+  @media (max-width: 600px) {
+    padding: 20px 15px;
+  }
+}
+.title {
+  margin-bottom: 20px;
+}
+p {
+  margin: 0;
+}
+
+.content {
+  display: grid;
+  column-gap: 20px;
+  row-gap: 20px;
+  grid-template-columns: 2fr 2fr 1fr;
+
+  font-size: rem(20);
+  div {
+    padding: 7px 12px;
+  }
+}
+
+.heading {
+  border-radius: 4px;
+  background-color: $color-main;
+  text-align: center;
+}

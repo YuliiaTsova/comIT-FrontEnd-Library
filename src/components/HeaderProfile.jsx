@@ -1,7 +1,10 @@
 import style from './headerProfile.module.scss';
 import user from '../assets/img/profile.png';
+import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 export const HeaderProfile = () => {
+  const [active, setActive] = useState('personal');
   return (
     <section className={style.headerProfile}>
       <div className={style.title}>
@@ -20,21 +23,30 @@ export const HeaderProfile = () => {
       </div>
       <nav className="nav">
         <ul className={`${style.list} listReset`}>
-          <li className={`${style.item} ${style.active}`}>
-            <a href="" className={style.link}>
+          <Link to="/profile" className={style.link}>
+            <li
+              className={`${style.item} ${active === 'personal' ? style.active : ''}`}
+              onClick={() => setActive('personal')}
+            >
               Personal Information
-            </a>
-          </li>
-          <li className={style.item}>
-            <a href="" className={style.link}>
+            </li>
+          </Link>
+          <Link to="/profile/check" className={style.link}>
+            <li
+              className={`${style.item} ${active === 'checkouts' ? style.active : ''}`}
+              onClick={() => setActive('checkouts')}
+            >
               Checkouts
-            </a>
-          </li>
-          <li className={style.item}>
-            <a href="" className={style.link}>
+            </li>
+          </Link>
+          <Link to="/profile/holds" className={style.link}>
+            <li
+              className={`${style.item} ${active === 'holds' ? style.active : ''}`}
+              onClick={() => setActive('holds')}
+            >
               Holds
-            </a>
-          </li>
+            </li>
+          </Link>
         </ul>
       </nav>
     </section>

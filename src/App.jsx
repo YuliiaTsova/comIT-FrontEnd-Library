@@ -11,6 +11,8 @@ import { PersonalInfo } from './pages/PersonalInfo';
 import { LayoutProfile } from './components/LayoutProfile';
 import { HeaderProfile } from './components/HeaderProfile';
 import { UserInfo } from './components/UserInfo';
+import { Checkouts } from './components/Checkouts';
+import { Holds } from './components/holds';
 
 function App() {
   return (
@@ -25,7 +27,8 @@ function App() {
         {/* <Route path="/personal" element={<PersonalInfo />} /> */}
         <Route path="/profile" element={<LayoutProfile />}>
           <Route path="" element={<UserInfo />} />
-          <Route path="/profile/check" element={<div>dfdf</div>} />
+          <Route path="/profile/check" element={<Checkouts />} />
+          <Route path="/profile/holds" element={<Holds />} />
         </Route>
         {/* <Route path="cart" element={<CartPage />} />
       <Route path="pizza/:id" element={<PizzaDetailBlock />} />

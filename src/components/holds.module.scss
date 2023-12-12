@@ -1,0 +1,23 @@
+@import '../SCSS/func';
+@import '../SCSS/variables';
+
+.info {
+  margin-top: 40px;
+  padding: 20px 40px;
+  border: 2px dashed #000000;
+  border-radius: 10px;
+  @media (max-width: 600px) {
+    padding: 20px 15px;
+  }
+}
+.content {
+  max-width: 300px;
+}
+.item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+p {
+  margin: 0;
+}
