@@ -13,6 +13,7 @@ import { HeaderProfile } from './components/HeaderProfile';
 import { UserInfo } from './components/UserInfo';
 import { Checkouts } from './components/Checkouts';
 import { Holds } from './components/holds';
+import { Success } from './components/Success';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
           <Route path="/profile/check" element={<Checkouts />} />
           <Route path="/profile/holds" element={<Holds />} />
         </Route>
+        {/* <Route path="/success" element={<Success />} /> */}
         {/* <Route path="cart" element={<CartPage />} />
       <Route path="pizza/:id" element={<PizzaDetailBlock />} />
       <Route path="*" element={<NotFoundPage />} />  */}

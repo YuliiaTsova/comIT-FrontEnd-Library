@@ -5,8 +5,13 @@ import bookmark from '../assets/img/bookmark.svg';
 import cart from '../assets/img/cart.svg';
 import { Cart } from './Cart';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 export const Header = () => {
+  const [activeCart, setActiveCart] = useState(false);
+  console.log('activeCart', activeCart);
+
+  const openCart = () => {};
   return (
     <header className={styles.header}>
       <div className="container">
@@ -33,12 +38,18 @@ export const Header = () => {
               </li>
               <li className={styles.navItem}>
                 {/* <a href="" className={styles.navLink}> */}
-                <button className={`${styles.buttonCart} btnReset`}>
+                <button
+                  className={`${styles.buttonCart} btnReset`}
+                  onClick={() => setActiveCart(!activeCart)}
+                >
                   <img src={cart} alt="cart" className={styles.navImgCart} />
                 </button>
-                {/* <div className={`${styles.cartOverlay} ${styles.active} `}>
-                  <Cart />
-                </div> */}
+                {activeCart && (
+                  <div className={`${styles.cartOverlay} ${styles.active} `}>
+                    <Cart />
+                  </div>
+                )}
+
                 {/* </a> */}
               </li>
             </ul>
