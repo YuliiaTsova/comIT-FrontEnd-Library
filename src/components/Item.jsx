@@ -5,22 +5,23 @@ import { ButtonBookmark } from './ButtonBookmark';
 import { ButtonHold } from './ButtonHold';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { setItemCart } from '../redux/slices/cartSlice';
+import { deleteItemCart, setItemCart } from '../redux/slices/cartSlice';
 
 export const Item = ({ cover, title, bookId, id, author }) => {
   const cartItems = useSelector((state) => state.cart.items);
-  // console.log('cartItems', cartItems);
+
   bookId = bookId || id;
-  // const isAdded = cartItems.map((el) => {
-  //   el.bookId === bookId});
-  // console.log('isAdded', isAdded);
 
   const isAdded = cartItems.find((el) => el.bookId === bookId);
-  console.log('isAdded', isAdded);
+
   const dispatch = useDispatch();
 
   const addToCart = () => {
     dispatch(setItemCart({ cover, title, bookId, author }));
+  };
+
+  const deleteFromCart = () => {
+    dispatch(deleteItemCart(bookId));
   };
 
   return (
@@ -39,11 +40,11 @@ export const Item = ({ cover, title, bookId, id, author }) => {
       {/* <button className={`${style.btnItem} btn`}>Place hold</button> */}
       <div
         className={style.btnPosition}
-        onClick={addToCart}
-        style={isAdded ? { pointerEvents: 'none', opacity: '0.5' } : {}}
+        onClick={isAdded ? deleteFromCart : addToCart}
+        style={isAdded ? { opacity: '0.5' } : {}}
       >
         <ButtonHold className={style.btnPosition}>
-          {isAdded ? 'Added' : 'Place hold'}
+          {isAdded ? 'Delete hold' : 'Place hold'}
         </ButtonHold>
       </div>
     </article>

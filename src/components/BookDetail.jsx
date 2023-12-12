@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { fetchBook } from '../redux/slices/BookSlice';
 import { Trand } from './Trand';
+import { deleteItemCart, setItemCart } from '../redux/slices/cartSlice';
 
 export const BookDetail = () => {
   const { id } = useParams();
@@ -16,9 +17,21 @@ export const BookDetail = () => {
   const cartItems = useSelector((state) => state.cart.items);
 
   const isAdded = cartItems.find((el) => el.bookId == id);
-  console.log('isAdded', isAdded);
-  console.log('cartItems', cartItems);
-  console.log('id', id);
+
+  const addToCart = () => {
+    dispatch(
+      setItemCart({
+        cover: item.cover,
+        title: item.title,
+        bookId: id,
+        author: item.author,
+      })
+    );
+  };
+
+  const deleteFromCart = () => {
+    dispatch(deleteItemCart(id));
+  };
 
   // useEffect(() => {
   //   axios
@@ -64,7 +77,8 @@ export const BookDetail = () => {
           </div>
           <div
             className={style.btnPosition}
-            style={isAdded ? { pointerEvents: 'none', opacity: '0.5' } : {}}
+            style={isAdded ? { opacity: '0.5' } : {}}
+            onClick={isAdded ? deleteFromCart : addToCart}
           >
             <ButtonHold>{isAdded ? 'Added' : 'Place hold'}</ButtonHold>
           </div>

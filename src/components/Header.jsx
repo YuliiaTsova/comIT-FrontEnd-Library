@@ -17,8 +17,6 @@ export const Header = () => {
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-      console.log('xxxxxxxx', event.composedPath());
-      console.log('cartRef.current', cartRef.current);
       if (!event.composedPath().includes(cartRef.current)) {
         setActiveCart(false);
       }

@@ -16,7 +16,7 @@ const cartSlice = createSlice({
       // return { ...state, items: [...state.items, action.payload] };
     },
     deleteItemCart: (state, action) => {
-      state.items = state.items.filter((el) => el.bookId !== action.payload);
+      state.items = state.items.filter((el) => el.bookId != action.payload);
       state.totalCount--;
     },
   },

@@ -29,8 +29,6 @@ export const Trand = () => {
     // }
   }, []);
 
-  console.log(items);
-
   return (
     <section className={style.trand} aria-label="tranding book">
       <h2 className={`${style.title} heading2`}>Tranding books</h2>
