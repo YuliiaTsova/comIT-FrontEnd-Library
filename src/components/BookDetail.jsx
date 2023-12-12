@@ -13,6 +13,12 @@ export const BookDetail = () => {
   const { id } = useParams();
 
   const item = useSelector((state) => state.book.item);
+  const cartItems = useSelector((state) => state.cart.items);
+
+  const isAdded = cartItems.find((el) => el.bookId == id);
+  console.log('isAdded', isAdded);
+  console.log('cartItems', cartItems);
+  console.log('id', id);
 
   // useEffect(() => {
   //   axios
@@ -56,8 +62,11 @@ export const BookDetail = () => {
               Copies :<span className={style.text}>{item.copies}</span>
             </p>
           </div>
-          <div className={style.btnPosition}>
-            <ButtonHold>Place hold</ButtonHold>
+          <div
+            className={style.btnPosition}
+            style={isAdded ? { pointerEvents: 'none', opacity: '0.5' } : {}}
+          >
+            <ButtonHold>{isAdded ? 'Added' : 'Place hold'}</ButtonHold>
           </div>
         </article>
       </section>

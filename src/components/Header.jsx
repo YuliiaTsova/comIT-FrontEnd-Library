@@ -5,13 +5,28 @@ import bookmark from '../assets/img/bookmark.svg';
 import cart from '../assets/img/cart.svg';
 import { Cart } from './Cart';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { useSelector } from 'react-redux';
 
 export const Header = () => {
   const [activeCart, setActiveCart] = useState(false);
-  console.log('activeCart', activeCart);
+  const totalCount = useSelector((state) => state.cart.totalCount);
 
-  const openCart = () => {};
+  //close pop up if click is outside+
+  const cartRef = useRef();
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      console.log('xxxxxxxx', event.composedPath());
+      console.log('cartRef.current', cartRef.current);
+      if (!event.composedPath().includes(cartRef.current)) {
+        setActiveCart(false);
+      }
+    };
+    document.body.addEventListener('click', handleClickOutside);
+    return () => document.body.removeEventListener('click', handleClickOutside);
+  }, []);
+
   return (
     <header className={styles.header}>
       <div className="container">
@@ -24,36 +39,45 @@ export const Header = () => {
               {/* </a> */}
             </Link>
           </div>
-          <nav className={styles.nav}>
-            <ul className={`${styles.navList} listReset`}>
-              <li className={`${styles.navItem} `}>
-                <Link to="/profile" className={styles.navLink}>
-                  <img src={user} alt="profile" className={styles.navImgUser} />
-                </Link>
-              </li>
-              <li className={styles.navItem}>
-                <a href="" className={styles.navLink}>
-                  <img src={bookmark} alt="bookmark" className={styles.navImgBookmark} />
-                </a>
-              </li>
-              <li className={styles.navItem}>
-                {/* <a href="" className={styles.navLink}> */}
-                <button
-                  className={`${styles.buttonCart} btnReset`}
-                  onClick={() => setActiveCart(!activeCart)}
-                >
-                  <img src={cart} alt="cart" className={styles.navImgCart} />
-                </button>
-                {activeCart && (
-                  <div className={`${styles.cartOverlay} ${styles.active} `}>
-                    <Cart />
-                  </div>
-                )}
-
-                {/* </a> */}
-              </li>
-            </ul>
-          </nav>
+          <div className={styles.headerRight}>
+            <nav className={styles.nav}>
+              <ul className={`${styles.navList} listReset`}>
+                <li className={`${styles.navItem} `}>
+                  <Link to="/profile" className={styles.navLink}>
+                    <img src={user} alt="profile" className={styles.navImgUser} />
+                  </Link>
+                </li>
+                <li className={styles.navItem}>
+                  <a href="" className={styles.navLink}>
+                    <img
+                      src={bookmark}
+                      alt="bookmark"
+                      className={styles.navImgBookmark}
+                    />
+                  </a>
+                </li>
+              </ul>
+            </nav>
+            <button className={`${styles.buttonCart} btnReset`} ref={cartRef}>
+              <img
+                src={cart}
+                alt="cart"
+                className={styles.navImgCart}
+                onClick={() => setActiveCart(!activeCart)}
+              />
+              <div className={styles.totalCount}>{totalCount}</div>
+              {/* <div className={`${styles.cartOverlay} ${activeCart && styles.active} `}> */}
+              <div className={`${styles.cartContent} ${activeCart && styles.active}`}>
+                <Cart setOpen={setActiveCart} />
+                {/* </div> */}
+              </div>
+            </button>
+            {/* {activeCart && (
+              <div className={`${styles.cartOverlay} ${styles.active} `}>
+                <Cart />
+              </div>
+            )} */}
+          </div>
         </div>
       </div>
     </header>
