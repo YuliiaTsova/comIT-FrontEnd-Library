@@ -18,7 +18,6 @@ export const Select = () => {
 
   //////////////////!!!!!!!!!!!!
   useEffect(() => {
-    console.log('!!!!!!!!!!!!!!!!!!!!!!!!', searchValue);
     if (searchValue === '') {
       dispatch(fetchBookByCategory(currentCategory));
     }
@@ -44,7 +43,7 @@ export const Select = () => {
               Categories
             </option>
             {categoryList.map((el) => (
-              <option value={el} className={style.option}>
+              <option value={el} className={style.option} key={el}>
                 {el}
               </option>
             ))}

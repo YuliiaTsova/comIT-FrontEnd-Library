@@ -1,5 +1,6 @@
 import backgroundimg from '../assets/img/background-img.jpg';
 import { Search } from './Search';
+import book from '../assets/img/BookOpen.png';
 //import explore from '../assets/img/explore.svg';
 import styles from './hero.module.scss';
 
@@ -11,11 +12,11 @@ export const Hero = () => {
         <p className={styles.subTitle}>Explore our catalog and find your next read.</p>
         <Search />
         <div className={styles.bottom}>
-          <button className={styles.btnExplore} aria-label="explore boks">
+          {/* <button className={styles.btnExplore} aria-label="explore boks">
             Explore
-            {/* <img src={explore} alt="explore" className={styles.exploreImg} /> */}
-          </button>
-          <p className={styles.line}></p>
+          </button> */}
+          <img src={book} alt="book img" aria-hidden className={styles.bookImg} />
+          {/* <p className={styles.line}></p> */}
         </div>
       </div>
       <div className={styles.picture}>

@@ -13,10 +13,9 @@ export const fetchBook = createAsyncThunk('book/fetchBook', async (id) => {
   //   sortType.includes('-') ? 'desc' : 'asc'
   // }`;
   // const page = `page=${currentPage}&limit=8`;
-  console.log('1111111111');
+
   //const res = await axios.get('http://localhost:3000/db.json');
   const res = await axios.get(`http://localhost:3000/books/${id}`);
-  console.log('22222222222');
 
   return res.data;
 });

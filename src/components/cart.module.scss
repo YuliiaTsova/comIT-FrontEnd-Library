@@ -7,11 +7,14 @@
   z-index: 35;
   padding: 15px;
   width: 400px;
-  max-height: 500px;
+  max-height: 550px;
   border-radius: 15px;
   background-color: #f3f3f3;
-  overflow-y: auto;
+
   cursor: default;
+  @media (max-width: 750px) {
+    width: 280px;
+  }
 }
 
 .title {
@@ -41,6 +44,9 @@
   gap: 15px;
   margin-top: 15px;
   margin-bottom: 25px;
+  padding-right: 10px;
+  max-height: 400px;
+  overflow-y: auto;
 }
 .item {
   position: relative;

@@ -36,7 +36,7 @@ export const Trand = () => {
         <div className={`${style.more} viewMore`}>view more</div>
         <ul className={`${style.list} listReset`}>
           {items.map((el) => (
-            <li className={style.item} key={el.id}>
+            <li className={style.item} key={el.bookId}>
               <Item {...el} />
             </li>
           ))}

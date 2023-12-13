@@ -25,7 +25,9 @@ export const Search = () => {
           type="search"
           className={style.input}
           placeholder="Search by name or author"
+          name="search"
           value={searchValue}
+          required
           onChange={(e) => {
             setValueSearch(e.target.value);
           }}

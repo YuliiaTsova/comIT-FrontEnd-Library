@@ -54,6 +54,13 @@
   transition: background-color 0.2s ease-in-out;
 }
 
+.bookImg {
+  margin: 0 auto;
+  margin-top: 20px;
+  @media (max-width: 950px) {
+    display: none;
+  }
+}
 .btnExplore:hover {
   background-color: $color-main-dark;
 }

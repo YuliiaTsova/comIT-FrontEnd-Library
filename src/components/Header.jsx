@@ -56,7 +56,7 @@ export const Header = () => {
                 </li>
               </ul>
             </nav>
-            <button className={`${styles.buttonCart} btnReset`} ref={cartRef}>
+            <div className={`${styles.buttonCart} btnReset`} ref={cartRef}>
               <img
                 src={cart}
                 alt="cart"
@@ -69,7 +69,7 @@ export const Header = () => {
                 <Cart setOpen={setActiveCart} />
                 {/* </div> */}
               </div>
-            </button>
+            </div>
             {/* {activeCart && (
               <div className={`${styles.cartOverlay} ${styles.active} `}>
                 <Cart />

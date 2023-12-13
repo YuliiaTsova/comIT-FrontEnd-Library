@@ -27,7 +27,7 @@ export const Cart = ({ setOpen }) => {
           <div className={style.content}>
             <ul className={`${style.list} listReset`}>
               {cartItems.map((el) => (
-                <li className={style.item}>
+                <li className={style.item} key={el.bookId}>
                   <div className={style.img} onClick={() => setOpen(false)}>
                     <Link to={`/book/${el.bookId}`}>
                       <img src={el.cover} alt="book cover" className={style.cover} />

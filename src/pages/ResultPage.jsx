@@ -30,7 +30,7 @@ export const ResultPage = () => {
         ) : (
           <ul className={`${style.listItems} listReset`}>
             {books.map((el) => (
-              <li key={el.id}>
+              <li key={el.bookId}>
                 <Item {...el} id={el.id} />
               </li>
             ))}
