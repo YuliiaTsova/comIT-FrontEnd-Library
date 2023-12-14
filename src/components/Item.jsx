@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteItemCart, setItemCart } from '../redux/slices/cartSlice';
 
-export const Item = ({ cover, title, bookId, id, author }) => {
+export const Item = ({ cover, title, bookId, id, author, copies }) => {
   const cartItems = useSelector((state) => state.cart.items);
 
   bookId = bookId || id;
@@ -41,10 +41,16 @@ export const Item = ({ cover, title, bookId, id, author }) => {
       <div
         className={style.btnPosition}
         onClick={isAdded ? deleteFromCart : addToCart}
-        style={isAdded ? { opacity: '0.5' } : {}}
+        style={
+          copies != 0
+            ? isAdded
+              ? { opacity: '0.5' }
+              : {}
+            : { opacity: '0.5', pointerEvents: 'none' }
+        }
       >
         <ButtonHold className={style.btnPosition}>
-          {isAdded ? 'Delete hold' : 'Place hold'}
+          {copies != 0 ? (isAdded ? 'Delete hold' : 'Place hold') : 'Unavailable'}
         </ButtonHold>
       </div>
     </article>
