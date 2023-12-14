@@ -16,7 +16,7 @@ export const Search = () => {
     dispatch(setSearch(searchValue));
     //dispatch(setCategory(''));
     setValueSearch('');
-    navigate('/result');
+    navigate('/search');
   };
   return (
     <form className={style.searchBar} onSubmit={handleSubmit} /*onSubmit={}*/>

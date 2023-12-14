@@ -13,7 +13,7 @@ import { HeaderProfile } from './components/HeaderProfile';
 import { UserInfo } from './components/UserInfo';
 import { Checkouts } from './components/Checkouts';
 import { Holds } from './components/holds';
-import { Success } from './components/Success';
+import { Success, SuccessOrFail } from './components/SuccessOrFail';
 
 function App() {
   return (
@@ -24,14 +24,14 @@ function App() {
       <Route path="/" element={<Layout />}>
         <Route path="" element={<HomePage />} />
         <Route path="/book/:id" element={<BookPage />} />
-        <Route path="/result" element={<ResultPage />} />
+        <Route path="/search" element={<ResultPage />} />
         {/* <Route path="/personal" element={<PersonalInfo />} /> */}
         <Route path="/profile" element={<LayoutProfile />}>
           <Route path="" element={<UserInfo />} />
           <Route path="/profile/check" element={<Checkouts />} />
           <Route path="/profile/holds" element={<Holds />} />
         </Route>
-        {/* <Route path="/success" element={<Success />} /> */}
+        <Route path="/result" element={<SuccessOrFail />} />
         {/* <Route path="cart" element={<CartPage />} />
       <Route path="pizza/:id" element={<PizzaDetailBlock />} />
       <Route path="*" element={<NotFoundPage />} />  */}

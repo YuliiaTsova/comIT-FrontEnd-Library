@@ -10,7 +10,7 @@ export const BookPage = () => {
   return (
     <>
       <BookDetail />
-      {/* <Trand /> */}
+      <Trand />
     </>
   );
 };

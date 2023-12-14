@@ -3,17 +3,24 @@ import style from './cart.module.scss';
 import cover from '../assets/img/coverbook.jpg';
 import emptyCard from '../assets/img/emptyCart.png';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { deleteItemCart } from '../redux/slices/cartSlice';
+import { Link, useNavigate } from 'react-router-dom';
+import { deleteItemCart, placeOrder } from '../redux/slices/cartSlice';
 
 export const Cart = ({ setOpen }) => {
   const cartItems = useSelector((state) => state.cart.items);
   const totalCount = useSelector((state) => state.cart.totalCount);
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
+  const handlePlaceOrder = () => {
+    const bookIdList = cartItems.map((el) => el.bookId);
+    dispatch(placeOrder(bookIdList));
+    setOpen(false);
+    navigate('/result');
+  };
   return (
     <div className={style.cart}>
-      {cartItems.length == 0 ? (
+      {cartItems.length === 0 ? (
         <div className={style.emptyCart}>
           <p className={style.emptyTitle}>Nothing has been added yet :(</p>
           <img src={emptyCard} alt="emptyCard" className={style.emptyImg} aria-hidden />
@@ -95,7 +102,9 @@ export const Cart = ({ setOpen }) => {
                 </li>
               ))}
             </ul>
-            <ButtonHold>Place hold(s)</ButtonHold>
+            <div className={style.btnPosition} onClick={() => handlePlaceOrder()}>
+              <ButtonHold>Place hold(s)</ButtonHold>
+            </div>
           </div>
         </div>
       )}

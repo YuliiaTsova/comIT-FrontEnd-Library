@@ -84,23 +84,9 @@ export const BookDetail = () => {
           </div>
         </article>
       </section>
-      <section className={style.moreBooks}>
+      {/* <section className={style.moreBooks}>
         <div className="viewMore">view more</div>
-        {/* <ul className={`${style.list} listReset`}>
-          <li className={style.item}>
-            <Item />
-          </li>
-          <li className={style.item}>
-            <Item />
-          </li>
-          <li className={style.item}>
-            <Item />
-          </li>
-          <li className={style.item}>
-            <Item />
-          </li>
-        </ul> */}
-      </section>
+      </section> */}
     </>
   );
 };

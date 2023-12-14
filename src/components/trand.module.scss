@@ -61,6 +61,12 @@
     // padding-left: 10px;
     //padding-right: 10px;
   }
+
+  @media (max-width: 405px) {
+    grid-template-columns: minmax(150px, 200px);
+    // padding-left: 10px;
+    //padding-right: 10px;
+  }
 }
 
 .item {
