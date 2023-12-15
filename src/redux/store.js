@@ -3,6 +3,8 @@ import trandReducer from './slices/trandSlice';
 import BookSlice from './slices/BookSlice';
 import filterSlice from './slices/filterSlice';
 import cartSlice from './slices/cartSlice';
+import authSlice from './slices/authSlice';
+import bookmarkSlice from './slices/bookmarkSlice.';
 
 export const store = configureStore({
   reducer: {
@@ -10,6 +12,8 @@ export const store = configureStore({
     book: BookSlice,
     filter: filterSlice,
     cart: cartSlice,
+    bookmark: bookmarkSlice,
+    auth: authSlice,
   },
 });
 

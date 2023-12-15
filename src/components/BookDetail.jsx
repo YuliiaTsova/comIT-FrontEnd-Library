@@ -9,6 +9,7 @@ import { useEffect } from 'react';
 import { fetchBook } from '../redux/slices/BookSlice';
 import { Trand } from './Trand';
 import { deleteItemCart, setItemCart } from '../redux/slices/cartSlice';
+import { addBookmark } from '../redux/slices/bookmarkSlice.';
 
 export const BookDetail = () => {
   const { id } = useParams();
@@ -51,6 +52,10 @@ export const BookDetail = () => {
     window.scrollTo({ top: 0 });
   }, [id]);
 
+  const setBookmark = () => {
+    dispatch(addBookmark(id, 1 /*userId*/));
+  };
+
   return (
     <>
       <section className={style.bookDetail}>
@@ -61,7 +66,7 @@ export const BookDetail = () => {
         <article className={style.detail}>
           <div className={style.header}>
             <h2 className="heading2">{item.title}</h2>
-            <div className={style.bookmarkPosition}>
+            <div className={style.bookmarkPosition} onClick={setBookmark}>
               <ButtonBookmark />
             </div>
           </div>

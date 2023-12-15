@@ -14,8 +14,17 @@ import { UserInfo } from './components/UserInfo';
 import { Checkouts } from './components/Checkouts';
 import { Holds } from './components/holds';
 import { Success, SuccessOrFail } from './components/SuccessOrFail';
+import { LoginPage } from './pages/LoginPage';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { fetchBookmarks } from './redux/slices/bookmarkSlice.';
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchBookmarks());
+  }, []);
   return (
     // <div className={styles.wrapper}>
     //   <Header />
@@ -32,6 +41,7 @@ function App() {
           <Route path="/profile/holds" element={<Holds />} />
         </Route>
         <Route path="/result" element={<SuccessOrFail />} />
+        <Route path="/login" element={<LoginPage />} />
         {/* <Route path="cart" element={<CartPage />} />
       <Route path="pizza/:id" element={<PizzaDetailBlock />} />
       <Route path="*" element={<NotFoundPage />} />  */}

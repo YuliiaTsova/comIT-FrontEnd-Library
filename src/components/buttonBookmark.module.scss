@@ -1,7 +1,7 @@
 @import '../SCSS/variables';
 
 .btnBookamrk {
-  position: absolute;
+  // position: absolute;
   //top: 7px;
   // right: 17px;
   width: 45px;
@@ -23,4 +23,8 @@
 
 .btnBookamrk:hover {
   background-color: $color-main-dark;
+}
+
+.bookmarkFill {
+  fill: $color-main;
 }

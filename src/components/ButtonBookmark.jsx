@@ -1,8 +1,11 @@
 import style from './buttonBookmark.module.scss';
 
-export const ButtonBookmark = () => {
+export const ButtonBookmark = ({ bookmarkId }) => {
   return (
-    <button className={`${style.btnBookamrk} btnReset`} aria-label="bookmark button">
+    <button
+      className={`${style.btnBookamrk} btnReset ${bookmarkId ? style.bookmarkFill : ''}`}
+      aria-label="bookmark button"
+    >
       <svg
         className={style.bookmarkImg}
         width="18"
