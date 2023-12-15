@@ -23,14 +23,11 @@ export const addBookmark = createAsyncThunk(
   }
 );
 
-export const deleteBookmark = createAsyncThunk(
-  'bookmark/deleteBookmark',
-  async (id, userId = 1) => {
-    const res = await axios.delete(`http://localhost:8080/bookmark/${id}`);
-    // thunkAPI.fulfillWithValue(res.data);
-    return res.data;
-  }
-);
+export const deleteBookmark = createAsyncThunk('bookmark/deleteBookmark', async (id) => {
+  const res = await axios.delete(`http://localhost:8080/bookmark/${id}`);
+  return { id };
+  //  return res.data;
+});
 
 export const fetchBookmarks = createAsyncThunk(
   'bookmark/fetchBookmarks',
@@ -91,7 +88,8 @@ const bookmarkSlice = createSlice({
 
     builder.addCase(deleteBookmark.fulfilled, (state, action) => {
       state.status = 'success';
-      console.log('!!!!!!!!!!!!!!!!!!', action.payload.id);
+      console.log('!!!!!!!!!!!!!!!!!!', action);
+      state.items = state.items.filter((el) => el.id != action.payload.id);
       // state.items = action.payload;
     });
 

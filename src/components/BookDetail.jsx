@@ -9,16 +9,23 @@ import { useEffect } from 'react';
 import { fetchBook } from '../redux/slices/BookSlice';
 import { Trand } from './Trand';
 import { deleteItemCart, setItemCart } from '../redux/slices/cartSlice';
-import { addBookmark } from '../redux/slices/bookmarkSlice.';
+import { addBookmark, deleteBookmark } from '../redux/slices/bookmarkSlice.';
 
 export const BookDetail = () => {
   const { id } = useParams();
 
   const item = useSelector((state) => state.book.item);
   const cartItems = useSelector((state) => state.cart.items);
+  const bookmarks = useSelector((state) => state.bookmark.items);
+
+  const isBookmark = bookmarks.filter((el) => el.bookId === +id);
+
+  let bookmarkId;
+  if (isBookmark.length !== 0) {
+    bookmarkId = bookmarks[0].id;
+  }
 
   const isAdded = cartItems.find((el) => el.bookId == id);
-
   const addToCart = () => {
     dispatch(
       setItemCart({
@@ -34,18 +41,6 @@ export const BookDetail = () => {
     dispatch(deleteItemCart(id));
   };
 
-  // useEffect(() => {
-  //   axios
-  //     .get('http://localhost:3000/db.json')
-  //     .then((data) => {
-  //       setBooks(data.data);
-  //       console.log(books);
-  //     })
-  //     .catch((er) => {
-  //       console.log(er.message);
-  //     });
-  // }, []);
-
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchBook(id));
@@ -54,6 +49,10 @@ export const BookDetail = () => {
 
   const setBookmark = () => {
     dispatch(addBookmark(id, 1 /*userId*/));
+  };
+
+  const removeBookmark = () => {
+    dispatch(deleteBookmark(bookmarkId));
   };
 
   return (
@@ -66,8 +65,11 @@ export const BookDetail = () => {
         <article className={style.detail}>
           <div className={style.header}>
             <h2 className="heading2">{item.title}</h2>
-            <div className={style.bookmarkPosition} onClick={setBookmark}>
-              <ButtonBookmark />
+            <div
+              className={style.bookmarkPosition}
+              onClick={bookmarkId ? removeBookmark : setBookmark}
+            >
+              <ButtonBookmark bookmarkId={bookmarkId} />
             </div>
           </div>
           <p className={style.author}>Author : {item.author}</p>
