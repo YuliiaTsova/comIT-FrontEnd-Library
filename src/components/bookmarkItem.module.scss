@@ -1,0 +1,56 @@
+@import '../SCSS/func';
+
+.item {
+  display: flex;
+  column-gap: 40px;
+  row-gap: 50px;
+}
+
+.cover {
+  width: 150px;
+  height: auto;
+  @media (max-width: 425px) {
+    width: 100px;
+  }
+}
+.coverImg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.detail {
+  flex: 0 1 67%;
+  @media (max-width: 625px) {
+  }
+}
+.header {
+  position: relative;
+  padding-right: 47px;
+}
+
+.bookmarkPosition {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.author {
+  margin-top: 20px;
+  // border: 2px dashed black;
+  // border-radius: 20px;
+  // box-shadow: 6px 6px 0 #676767;
+  font-size: rem(24);
+  @media (max-width: 425px) {
+    font-size: rem(20);
+  }
+}
+
+.btnPosition {
+  max-width: 200px;
+  height: 43px;
+  margin-top: 40px;
+  @media (max-width: 425px) {
+    max-width: 150px;
+    height: 35px;
+  }
+}

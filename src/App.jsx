@@ -18,6 +18,7 @@ import { LoginPage } from './pages/LoginPage';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { fetchBookmarks } from './redux/slices/bookmarkSlice.';
+import { BookmarksPage } from './pages/BookmarksPage';
 
 function App() {
   const dispatch = useDispatch();
@@ -41,6 +42,7 @@ function App() {
           <Route path="/profile/holds" element={<Holds />} />
         </Route>
         <Route path="/result" element={<SuccessOrFail />} />
+        <Route path="/bookmarks" element={<BookmarksPage />} />
         <Route path="/login" element={<LoginPage />} />
         {/* <Route path="cart" element={<CartPage />} />
       <Route path="pizza/:id" element={<PizzaDetailBlock />} />

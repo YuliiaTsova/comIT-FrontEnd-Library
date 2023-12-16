@@ -17,12 +17,14 @@ export const BookDetail = () => {
   const item = useSelector((state) => state.book.item);
   const cartItems = useSelector((state) => state.cart.items);
   const bookmarks = useSelector((state) => state.bookmark.items);
-
-  const isBookmark = bookmarks.filter((el) => el.bookId === +id);
+  const dispatch = useDispatch();
+  const isBookmark = bookmarks.filter((el) => {
+    return el.bookId == +id;
+  });
 
   let bookmarkId;
   if (isBookmark.length !== 0) {
-    bookmarkId = bookmarks[0].id;
+    bookmarkId = isBookmark[0].id;
   }
 
   const isAdded = cartItems.find((el) => el.bookId == id);
@@ -41,7 +43,6 @@ export const BookDetail = () => {
     dispatch(deleteItemCart(id));
   };
 
-  const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchBook(id));
     window.scrollTo({ top: 0 });
@@ -57,7 +58,7 @@ export const BookDetail = () => {
 
   return (
     <>
-      <section className={style.bookDetail}>
+      <section className={style.bookDetail} aria-label="book details">
         <div className={style.cover}>
           <img src={item.cover} alt="book cover" className={style.coverImg} />
           {/* <img src={props.imageUrl} alt="pizza" /> */}
@@ -78,16 +79,32 @@ export const BookDetail = () => {
             <p className={style.language}>
               Language :<span className={style.text}>{item.language}</span>
             </p>
-            <p className={style.copies}>
+            {/* <p className={style.copies}>
               Copies :<span className={style.text}>{item.copies}</span>
-            </p>
+            </p> */}
           </div>
           <div
             className={style.btnPosition}
             style={isAdded ? { opacity: '0.5' } : {}}
             onClick={isAdded ? deleteFromCart : addToCart}
           >
-            <ButtonHold>{isAdded ? 'Added' : 'Place hold'}</ButtonHold>
+            <div
+              style={
+                item.copies != 0
+                  ? isAdded
+                    ? { opacity: '0.6' }
+                    : {}
+                  : { opacity: '0.3', pointerEvents: 'none' }
+              }
+            >
+              <ButtonHold>
+                {item.copies != 0
+                  ? isAdded
+                    ? 'Delete hold'
+                    : 'Place hold'
+                  : 'Unavailable'}
+              </ButtonHold>
+            </div>
           </div>
         </article>
       </section>

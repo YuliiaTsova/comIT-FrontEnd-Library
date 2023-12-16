@@ -46,13 +46,13 @@ export const Header = () => {
                   </Link>
                 </li>
                 <li className={styles.navItem}>
-                  <a href="" className={styles.navLink}>
+                  <Link to="/bookmarks" className={styles.navLink}>
                     <img
                       src={bookmark}
                       alt="bookmark"
                       className={styles.navImgBookmark}
                     />
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </nav>

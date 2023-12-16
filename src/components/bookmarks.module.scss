@@ -1,0 +1,14 @@
+@import '../SCSS/func';
+
+.content {
+  max-width: 1000px;
+  margin: 60px auto;
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 15px;
+  margin-bottom: 25px;
+  padding-right: 10px;
+}

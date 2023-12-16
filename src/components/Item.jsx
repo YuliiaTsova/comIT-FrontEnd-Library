@@ -64,9 +64,9 @@ export const Item = ({ cover, title, bookId, id, author, copies }) => {
         style={
           copies != 0
             ? isAdded
-              ? { opacity: '0.5' }
+              ? { opacity: '0.6' }
               : {}
-            : { opacity: '0.5', pointerEvents: 'none' }
+            : { opacity: '0.3', pointerEvents: 'none' }
         }
       >
         <ButtonHold className={style.btnPosition}>
