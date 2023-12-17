@@ -5,12 +5,15 @@
   padding: 20px 40px;
   border: 2px dashed #000000;
   border-radius: 10px;
+  font-family: 'Unica One', sans-serif;
   @media (max-width: 600px) {
     padding: 20px 15px;
   }
 }
 .title {
   margin-bottom: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: rem(24);
 }
 p {
   margin: 0;

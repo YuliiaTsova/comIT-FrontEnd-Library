@@ -12,13 +12,18 @@ export const Bookmarks = () => {
 
   return (
     <div className={style.content}>
-      {console.log('RENDER BOOKMARKS')}
       <h2 className="heading2">Your bookmarks</h2>
-      <ul className={`${style.list} listReset`}>
-        {bookmarks.map((el) => (
-          <BookmarkItem {...el} key={el.id} />
-        ))}
-      </ul>
+      {bookmarks.length === 0 ? (
+        <div className={style.empty}>
+          Add your first bookmark and enjoy <span>;-)</span>
+        </div>
+      ) : (
+        <ul className={`${style.list} listReset`}>
+          {bookmarks.map((el) => (
+            <BookmarkItem {...el} key={el.id} />
+          ))}
+        </ul>
+      )}
     </div>
   );
 };

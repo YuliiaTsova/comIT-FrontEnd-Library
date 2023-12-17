@@ -23,7 +23,7 @@ export const HeaderProfile = () => {
       </div>
       <nav className="nav">
         <ul className={`${style.list} listReset`}>
-          <Link to="/profile" className={style.link}>
+          <Link to="/profile/info" className={style.link}>
             <li
               className={`${style.item} ${active === 'personal' ? style.active : ''}`}
               onClick={() => setActive('personal')}

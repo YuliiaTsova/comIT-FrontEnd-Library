@@ -1,22 +1,43 @@
+import { useDispatch, useSelector } from 'react-redux';
 import style from './userInfo.module.scss';
+import { useEffect } from 'react';
+import { fetchUserInfo } from '../redux/slices/profileSlice';
 
 export const UserInfo = () => {
+  const userInfo = useSelector((state) => state.profile.userInfo);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchUserInfo());
+  }, []);
   return (
     <section className={style.info}>
       <p className={style.title}>
-        <strong>User name</strong>
+        <strong>
+          {userInfo.firstName} {userInfo.lastName}
+        </strong>
       </p>
       <div className={style.pesonalData}>
-        <p>Street:</p>
-        <p>123 Queen St </p>
-        <p>City: </p>
-        <p>Fredericton</p>
-        <p>Province</p>
-        <p>NB</p>
-        <p>Postal code</p>
-        <p>1A0 1A0</p>
-        <p>Phone</p>
-        <p>(000) 00 00000</p>
+        <p>
+          <strong>Street:</strong>
+        </p>
+        <p>{userInfo.street}</p>
+        <p>
+          <strong>City: </strong>
+        </p>
+        <p>{userInfo.city}</p>
+        <p>
+          <strong>Province</strong>
+        </p>
+        <p>{userInfo.province}</p>
+        <p>
+          <strong>Postal code</strong>
+        </p>
+        <p>{userInfo.postCode}</p>
+        <p>
+          <strong>Phone</strong>
+        </p>
+        <p>{userInfo.phone}</p>
       </div>
     </section>
   );

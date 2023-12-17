@@ -41,7 +41,7 @@ export const Header = () => {
             <nav className={styles.nav}>
               <ul className={`${styles.navList} listReset`}>
                 <li className={`${styles.navItem} `}>
-                  <Link to="/profile" className={styles.navLink}>
+                  <Link to="/profile/info" className={styles.navLink}>
                     <img src={user} alt="profile" className={styles.navImgUser} />
                   </Link>
                 </li>
