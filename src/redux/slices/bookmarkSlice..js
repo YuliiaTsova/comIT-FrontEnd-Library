@@ -10,7 +10,7 @@ export const addBookmark = createAsyncThunk(
   'bookmark/addBookmark',
   async (bookId, userId = 1) => {
     const res = await axios.post(
-      'http://localhost:8080/bookmark',
+      '/bookmark',
       { userId, bookId },
       {
         headers: {
@@ -24,7 +24,7 @@ export const addBookmark = createAsyncThunk(
 );
 
 export const deleteBookmark = createAsyncThunk('bookmark/deleteBookmark', async (id) => {
-  const res = await axios.delete(`http://localhost:8080/bookmark/${id}`);
+  const res = await axios.delete(`/bookmark/${id}`);
   return { id };
   //  return res.data;
 });
@@ -32,7 +32,7 @@ export const deleteBookmark = createAsyncThunk('bookmark/deleteBookmark', async 
 export const fetchBookmarks = createAsyncThunk(
   'bookmark/fetchBookmarks',
   async (bookId, userId = 1) => {
-    const res = await axios.get('http://localhost:8080/bookmark');
+    const res = await axios.get('/bookmark');
     return res.data;
   }
 );

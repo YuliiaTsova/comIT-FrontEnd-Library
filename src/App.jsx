@@ -38,7 +38,7 @@ function App() {
         {/* <Route path="/personal" element={<PersonalInfo />} /> */}
         <Route path="/profile" element={<LayoutProfile />}>
           <Route path="" element={<UserInfo />} />
-          <Route path="/profile/check" element={<Checkouts />} />
+          <Route path="/profile/checkout" element={<Checkouts />} />
           <Route path="/profile/holds" element={<Holds />} />
         </Route>
         <Route path="/result" element={<SuccessOrFail />} />

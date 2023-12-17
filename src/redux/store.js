@@ -5,6 +5,7 @@ import filterSlice from './slices/filterSlice';
 import cartSlice from './slices/cartSlice';
 import authSlice from './slices/authSlice';
 import bookmarkSlice from './slices/bookmarkSlice.';
+import profileSlice from './slices/profileSlice';
 
 export const store = configureStore({
   reducer: {
@@ -13,6 +14,7 @@ export const store = configureStore({
     filter: filterSlice,
     cart: cartSlice,
     bookmark: bookmarkSlice,
+    profile: profileSlice,
     auth: authSlice,
   },
 });

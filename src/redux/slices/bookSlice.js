@@ -15,7 +15,7 @@ export const fetchBook = createAsyncThunk('book/fetchBook', async (id) => {
   // const page = `page=${currentPage}&limit=8`;
 
   //const res = await axios.get('http://localhost:3000/db.json');
-  const res = await axios.get(`http://localhost:3000/books/${id}`);
+  const res = await axios.get(`/books/${id}`);
 
   return res.data;
 });
@@ -23,13 +23,13 @@ export const fetchBook = createAsyncThunk('book/fetchBook', async (id) => {
 export const fetchBookByCategory = createAsyncThunk(
   'book/fetchBookByCategory',
   async (name) => {
-    const res = await axios.get(`http://localhost:3000/api/books/category?name=${name}`);
+    const res = await axios.get(`/api/books/category?name=${name}`);
     return res.data;
   }
 );
 
 export const searchBooks = createAsyncThunk('book/searchBooks', async (search) => {
-  const res = await axios.get(`http://localhost:3000/books/name?title=${search}`);
+  const res = await axios.get(`/books/name?title=${search}`);
   return res.data;
 });
 

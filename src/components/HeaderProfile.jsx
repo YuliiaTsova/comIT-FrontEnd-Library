@@ -31,7 +31,7 @@ export const HeaderProfile = () => {
               Personal Information
             </li>
           </Link>
-          <Link to="/profile/check" className={style.link}>
+          <Link to="/profile/checkout" className={style.link}>
             <li
               className={`${style.item} ${active === 'checkouts' ? style.active : ''}`}
               onClick={() => setActive('checkouts')}
@@ -39,14 +39,14 @@ export const HeaderProfile = () => {
               Checkouts
             </li>
           </Link>
-          <Link to="/profile/holds" className={style.link}>
+          {/* <Link to="/profile/holds" className={style.link}>
             <li
               className={`${style.item} ${active === 'holds' ? style.active : ''}`}
               onClick={() => setActive('holds')}
             >
               Holds
             </li>
-          </Link>
+          </Link> */}
         </ul>
       </nav>
     </section>

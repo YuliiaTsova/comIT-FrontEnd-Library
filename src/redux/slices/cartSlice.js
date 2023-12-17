@@ -9,7 +9,7 @@ const initialState = {
 
 export const placeOrder = createAsyncThunk('cart/placeOrder', async (bookIdList) => {
   const res = await axios.post(
-    'http://localhost:8080/checkout/add',
+    '/checkout/add',
     { userID: 1, books: bookIdList },
     {
       headers: {

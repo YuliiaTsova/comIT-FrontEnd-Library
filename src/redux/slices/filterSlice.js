@@ -14,7 +14,7 @@ export const fetchCategories = createAsyncThunk('filter/fetchCategories', async 
   // }`;
   // const page = `page=${currentPage}&limit=8`;
   //const res = await axios.get('http://localhost:3000/db.json');
-  const res = await axios.get('http://localhost:3000/api/categories');
+  const res = await axios.get('/api/categories');
 
   return res.data;
 });
