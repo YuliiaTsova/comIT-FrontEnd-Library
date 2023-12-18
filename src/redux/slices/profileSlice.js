@@ -4,13 +4,20 @@ import axios from 'axios';
 const initialState = {
   checkouts: [],
   userInfo: {},
+  totalPages: 0,
+  currentPage: 0,
+  size: 4,
   status: 'loading', //loading, success, error
 };
 
-export const fetchCheckouts = createAsyncThunk('profile/fetchCheckouts', async () => {
-  const res = await axios.get('/profile/checkout');
-  return res.data;
-});
+export const fetchCheckouts = createAsyncThunk(
+  'profile/fetchCheckouts',
+  async ({ page = 0, num = 4 }) => {
+    //const res = await axios.get('/profile/checkout');
+    const res = await axios.get(`/profile/checkout?page=${page}&size=${num}`);
+    return res.data;
+  }
+);
 
 export const fetchUserInfo = createAsyncThunk('profile/fetchUserInfo', async () => {
   const res = await axios.get('/profile/info');
@@ -20,6 +27,11 @@ export const fetchUserInfo = createAsyncThunk('profile/fetchUserInfo', async () 
 const profileSlice = createSlice({
   name: 'profile',
   initialState,
+  reducers: {
+    setCurrentPageCheckout: (state, action) => {
+      state.currentPage = action.payload;
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(fetchCheckouts.pending, (state, action) => {
       state.status = 'loading';
@@ -27,7 +39,9 @@ const profileSlice = createSlice({
 
     builder.addCase(fetchCheckouts.fulfilled, (state, action) => {
       state.status = 'success';
-      state.checkouts = action.payload;
+      state.checkouts = action.payload.content;
+      state.totalPages = action.payload.totalPages;
+      state.size = action.payload.size;
     });
 
     builder.addCase(fetchCheckouts.rejected, (state, action) => {
@@ -52,6 +66,6 @@ const profileSlice = createSlice({
   },
 });
 
-export const {} = profileSlice.actions;
+export const { setCurrentPageCheckout } = profileSlice.actions;
 
 export default profileSlice.reducer;

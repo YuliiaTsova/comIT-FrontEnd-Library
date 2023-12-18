@@ -61,11 +61,14 @@ export const Select = () => {
             <option value="romance" className={style.option} selected disabled>
               Filter
             </option>
-            <option value="adventure" className={style.option}>
+            <option value="popular" className={style.option}>
               Most popular
             </option>
-            <option value="detective" className={style.option}>
-              New
+            <option value="name A-Z" className={style.option}>
+              Name A-Z
+            </option>
+            <option value="name Z-A" className={style.option}>
+              Name Z-A
             </option>
           </select>
         </div>

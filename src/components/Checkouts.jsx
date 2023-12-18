@@ -1,15 +1,23 @@
 import { useDispatch, useSelector } from 'react-redux';
 import style from './checkouts.module.scss';
 import { useEffect } from 'react';
-import { fetchCheckouts } from '../redux/slices/profileSlice';
+import { fetchCheckouts, setCurrentPageCheckout } from '../redux/slices/profileSlice';
+import { Pagination } from './Pagination';
 
 export const Checkouts = () => {
   const checkouts = useSelector((state) => state.profile.checkouts);
+  const currentPage = useSelector((state) => state.profile.currentPage);
+  const totalPages = useSelector((state) => state.profile.totalPages);
+
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchCheckouts());
-  }, []);
+    dispatch(fetchCheckouts({ page: currentPage }));
+  }, [currentPage]);
+
+  // useEffect(() => {
+  //   dispatch(fetchCheckouts());
+  // }, []);
   return (
     <section className={style.info}>
       <p className={style.header}>
@@ -49,6 +57,13 @@ export const Checkouts = () => {
         <div>King</div>
         <div>12/12/2023</div>
       </div> */}
+      <div className={style.paginationPosition}>
+        <Pagination
+          current={currentPage}
+          total={totalPages}
+          setPage={setCurrentPageCheckout}
+        />
+      </div>
     </section>
   );
 };
