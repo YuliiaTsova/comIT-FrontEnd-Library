@@ -27,18 +27,6 @@ export const verifyUser = createAsyncThunk(
 const authSlice = createSlice({
   name: 'auth',
   initialState,
-  //reducers: {
-  //   setItemCart: (state, action) => {
-  //     state.items.push(action.payload);
-  //     state.totalCount = state.items.length;
-
-  //     // return { ...state, items: [...state.items, action.payload] };
-  //   },
-  //   deleteItemCart: (state, action) => {
-  //     state.items = state.items.filter((el) => el.bookId != action.payload);
-  //     state.totalCount--;
-  //   },
-  // },
   extraReducers: (builder) => {
     builder.addCase(verifyUser.pending, (state, action) => {
       state.status = 'Checking....';

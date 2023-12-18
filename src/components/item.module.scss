@@ -13,8 +13,11 @@
 }
 .cover {
   display: block;
+
   width: 100%;
-  height: clamp(220px, 100%, 298px);
+  height: 100%;
+  //  max-height: 330px;
+  // height: clamp(220px, 100%, 298px);
   margin-bottom: 20px;
   object-fit: cover;
   border-radius: 15px;
@@ -24,10 +27,7 @@
 }
 
 .cover:hover {
-  // position: relative;
-  // top: -15px;
   transform: translateY(-5px);
-  // transition: all 2s ease-in-out;
 }
 
 .link {
@@ -42,29 +42,7 @@
   right: 20px;
   z-index: 20;
 }
-// .btnBookamrk {
-//   position: absolute;
-//   top: 7px;
-//   right: 17px;
-//   width: 45px;
-//   height: 37px;
-//   padding: 5px;
-//   border-radius: 17px;
-//   background-color: #ffffff;
-//   fill: none;
-//   cursor: pointer;
 
-//   transition: background-color 0.2s ease-in-out;
-// }
-
-// .btnBookamrk:active {
-//   top: 10px;
-//   right: 7px;
-// }
-
-// .btnBookamrk:hover {
-//   background-color: $color-main-dark;
-// }
 .bookmarkImg {
 }
 .btnPosition {

@@ -1,13 +1,8 @@
 import style from './bookmarks.module.scss';
-import { Link } from 'react-router-dom';
-import { deleteItemCart, setItemCart } from '../redux/slices/cartSlice';
-import { addBookmark, deleteBookmark } from '../redux/slices/bookmarkSlice.';
-import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import { BookmarkItem } from './BookmarkItem';
 
 export const Bookmarks = () => {
-  // const item = useSelector((state) => state.book.item);
   const bookmarks = useSelector((state) => state.bookmark.items);
 
   return (

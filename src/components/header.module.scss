@@ -1,15 +1,10 @@
-//@import '../SCSS/settings';
 @import '../SCSS/variables';
 @import '../SCSS/func';
 
 .header {
   margin-top: 40px;
 }
-// .container {
-//   width: 90%;
-//   margin: 0 auto;
-//   padding: 5px;
-// }
+
 .headerContent {
   display: flex;
   justify-content: space-between;
@@ -29,10 +24,8 @@
   gap: 25px;
 }
 .headerImg {
-  //margin-right: 15px;
 }
 .headerTitle {
-  //vertical-align: middle;
   padding-right: 15px;
   font-family: 'Unica One', sans-serif;
   font-size: rem(24);
@@ -107,7 +100,6 @@
   bottom: 0;
   width: 20px;
   height: 20px;
-  // padding: 2px;
   transform: translate(25%, 25%);
   text-align: center;
   border-radius: 50%;

@@ -16,7 +16,6 @@ export const Select = () => {
     }
   }, []);
 
-  //////////////////!!!!!!!!!!!!
   useEffect(() => {
     if (searchValue === '') {
       dispatch(fetchBookByCategory(currentCategory));
@@ -47,15 +46,6 @@ export const Select = () => {
                 {el}
               </option>
             ))}
-            {/* <option value="romance" className={style.option} selected disabled>
-              Categories
-            </option>
-            <option value="adventure" className={style.option}>
-              Adventure
-            </option>
-            <option value="detective" className={style.option}>
-              Detective
-            </option> */}
           </select>
           <select name="" id="" className={style.filter}>
             <option value="romance" className={style.option} selected disabled>

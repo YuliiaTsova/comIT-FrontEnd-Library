@@ -1,6 +1,4 @@
 import style from './item.module.scss';
-import cover from '../assets/img/coverbook.jpg';
-import bookmark from '../assets/img/bookmark.svg';
 import { ButtonBookmark } from './ButtonBookmark';
 import { ButtonHold } from './ButtonHold';
 import { Link } from 'react-router-dom';
@@ -14,7 +12,6 @@ export const Item = ({ cover, title, bookId, id, author, copies }) => {
 
   bookId = bookId || id;
   let bookmarkId;
-  // const isBookmark = bookmarks.includes(bookId);
   const isBookmark = bookmarks.filter((el) => el.bookId === bookId);
 
   if (isBookmark.length !== 0) {
@@ -42,11 +39,7 @@ export const Item = ({ cover, title, bookId, id, author, copies }) => {
 
   return (
     <article className={style.item} aria-label="book item">
-      {console.log('RENDERRRRRRR')}
-      {/* <Link to={`/pizza/${props.id}`}></Link> */}
-
       <Link to={`/book/${bookId}`} className={style.link}>
-        {/* <img src={cover} alt="book cover" className={style.cover} /> */}
         <img src={cover} alt="book cover" className={style.cover} />
         <p className={style.title}> {title}</p>{' '}
       </Link>
@@ -57,7 +50,6 @@ export const Item = ({ cover, title, bookId, id, author, copies }) => {
         <ButtonBookmark bookmarkId={bookmarkId} />
       </div>
 
-      {/* <button className={`${style.btnItem} btn`}>Place hold</button> */}
       <div
         className={style.btnPosition}
         onClick={isAdded ? deleteFromCart : addToCart}

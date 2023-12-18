@@ -8,22 +8,14 @@ const initialState = {
 };
 
 export const fetchBook = createAsyncThunk('book/fetchBook', async (id) => {
-  // const category = categoryId === 0 ? '' : `&category=${categoryId}`;
-  // const sort = `&sortBy=${sortType.replace('-', '')}&order=${
-  //   sortType.includes('-') ? 'desc' : 'asc'
-  // }`;
-  // const page = `page=${currentPage}&limit=8`;
-
-  //const res = await axios.get('http://localhost:3000/db.json');
   const res = await axios.get(`/books/${id}`);
-
   return res.data;
 });
 
 export const fetchBookByCategory = createAsyncThunk(
   'book/fetchBookByCategory',
   async (name) => {
-    const res = await axios.get(`/api/books/category?name=${name}`);
+    const res = await axios.get(`/books/category?name=${name}`);
     return res.data;
   }
 );
@@ -41,20 +33,6 @@ const bookSlice = createSlice({
       state.item = action.payload;
     },
   },
-  // extraReducers: {
-  //   [fetchPizzas.pending]: (state, action) => {
-  //     state.status = 'loading';
-  //     state.items = [];
-  //   },
-  //   [fetchPizzas.fulfilled]: (state, action) => {
-  //     state.status = 'success';
-  //     state.items = action.payload;
-  //   },
-  //   [fetchPizzas.rejected]: (state, action) => {
-  //     state.status = action.error.message;
-  //     state.items = [];
-  //   },
-  // },
   extraReducers: (builder) => {
     builder.addCase(fetchBook.pending, (state, action) => {
       state.status = 'loading';

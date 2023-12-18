@@ -13,7 +13,7 @@ import { HeaderProfile } from './components/HeaderProfile';
 import { UserInfo } from './components/UserInfo';
 import { Checkouts } from './components/Checkouts';
 import { Holds } from './components/holds';
-import { Success, SuccessOrFail } from './components/SuccessOrFail';
+import { SuccessOrFail } from './components/SuccessOrFail';
 import { LoginPage } from './pages/LoginPage';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
@@ -27,15 +27,11 @@ function App() {
     dispatch(fetchBookmarks());
   }, []);
   return (
-    // <div className={styles.wrapper}>
-    //   <Header />
-    // </div>
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route path="" element={<HomePage />} />
         <Route path="/book/:id" element={<BookPage />} />
         <Route path="/search" element={<ResultPage />} />
-        {/* <Route path="/personal" element={<PersonalInfo />} /> */}
         <Route path="/profile" element={<LayoutProfile />}>
           <Route path="/profile/info" element={<UserInfo />} />
           <Route path="/profile/checkout" element={<Checkouts />} />
@@ -44,9 +40,6 @@ function App() {
         <Route path="/result" element={<SuccessOrFail />} />
         <Route path="/bookmarks" element={<BookmarksPage />} />
         <Route path="/login" element={<LoginPage />} />
-        {/* <Route path="cart" element={<CartPage />} />
-      <Route path="pizza/:id" element={<PizzaDetailBlock />} />
-      <Route path="*" element={<NotFoundPage />} />  */}
       </Route>
     </Routes>
   );

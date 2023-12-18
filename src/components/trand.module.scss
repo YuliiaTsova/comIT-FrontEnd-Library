@@ -10,9 +10,6 @@
 }
 
 .content {
-  //max-width: 90%;
-
-  // margin: 0 auto;
   margin-top: 40px;
   border: 2px dashed black;
   border-radius: 20px;
@@ -20,25 +17,7 @@
 }
 
 .more {
-  // position: relative;
 }
-// .more::before {
-//   content: '';
-//   display: inline-block;
-//   margin-right: 25px;
-//   position: relative;
-//   top: 3px;
-//   background-image: url('../../public/more.svg');
-//   width: 28px;
-//   height: 23px;
-// }
-// .list {
-//   margin-top: 30px;
-//   display: flex;
-//   justify-content: space-around;
-//   gap: 15px;
-//   // flex-wrap: wrap;
-// }
 
 .list {
   display: grid;
@@ -51,23 +30,14 @@
   padding-left: 50px;
   padding-right: 50px;
 
-  // flex-wrap: wrap;
   @media (max-width: 755px) {
-    grid-template-columns: repeat(3, minmax(100px, 150px));
+    grid-template-columns: repeat(2, minmax(100px, 150px));
     padding-left: 10px;
     padding-right: 10px;
   }
 
-  @media (max-width: 580px) {
-    grid-template-columns: repeat(2, minmax(100px, 150px));
-    // padding-left: 10px;
-    //padding-right: 10px;
-  }
-
   @media (max-width: 405px) {
     grid-template-columns: minmax(150px, 200px);
-    // padding-left: 10px;
-    //padding-right: 10px;
   }
 }
 

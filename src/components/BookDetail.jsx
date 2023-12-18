@@ -1,13 +1,10 @@
 import { ButtonBookmark } from './ButtonBookmark';
 import style from './bookDetail.module.scss';
-import cover from '../assets/img/coverbook.jpg';
 import { ButtonHold } from './ButtonHold';
-import { Item } from './Item';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { fetchBook } from '../redux/slices/BookSlice';
-import { Trand } from './Trand';
 import { deleteItemCart, setItemCart } from '../redux/slices/cartSlice';
 import { addBookmark, deleteBookmark } from '../redux/slices/bookmarkSlice.';
 
@@ -61,7 +58,6 @@ export const BookDetail = () => {
       <section className={style.bookDetail} aria-label="book details">
         <div className={style.cover}>
           <img src={item.cover} alt="book cover" className={style.coverImg} />
-          {/* <img src={props.imageUrl} alt="pizza" /> */}
         </div>
         <article className={style.detail}>
           <div className={style.header}>
@@ -79,9 +75,6 @@ export const BookDetail = () => {
             <p className={style.language}>
               Language :<span className={style.text}>{item.language}</span>
             </p>
-            {/* <p className={style.copies}>
-              Copies :<span className={style.text}>{item.copies}</span>
-            </p> */}
           </div>
           <div
             className={style.btnPosition}
@@ -108,9 +101,6 @@ export const BookDetail = () => {
           </div>
         </article>
       </section>
-      {/* <section className={style.moreBooks}>
-        <div className="viewMore">view more</div>
-      </section> */}
     </>
   );
 };

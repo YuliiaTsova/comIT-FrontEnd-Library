@@ -15,9 +15,6 @@ export const Checkouts = () => {
     dispatch(fetchCheckouts({ page: currentPage }));
   }, [currentPage]);
 
-  // useEffect(() => {
-  //   dispatch(fetchCheckouts());
-  // }, []);
   return (
     <section className={style.info}>
       <p className={style.header}>
@@ -50,17 +47,6 @@ export const Checkouts = () => {
           </ul>{' '}
         </div>
       )}
-      {/* <div className={style.content}>
-        <div className={style.heading}>Cover</div>
-        <div className={style.heading}>Title/Author</div>
-        <div className={style.heading}>Due Date</div>
-        <div>jjnnj</div>
-        <div>King</div>
-        <div>12/12/2023</div>
-        <div>jjnnj</div>
-        <div>King</div>
-        <div>12/12/2023</div>
-      </div> */}
       <div className={style.paginationPosition}>
         <Pagination
           current={currentPage}

@@ -1,6 +1,5 @@
 import { ButtonHold } from './ButtonHold';
 import style from './cart.module.scss';
-import cover from '../assets/img/coverbook.jpg';
 import emptyCard from '../assets/img/emptyCart.png';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';

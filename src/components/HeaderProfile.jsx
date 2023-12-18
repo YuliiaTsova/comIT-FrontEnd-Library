@@ -39,14 +39,6 @@ export const HeaderProfile = () => {
               Checkouts
             </li>
           </Link>
-          {/* <Link to="/profile/holds" className={style.link}>
-            <li
-              className={`${style.item} ${active === 'holds' ? style.active : ''}`}
-              onClick={() => setActive('holds')}
-            >
-              Holds
-            </li>
-          </Link> */}
         </ul>
       </nav>
     </section>

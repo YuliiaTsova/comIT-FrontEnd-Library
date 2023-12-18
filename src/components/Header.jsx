@@ -32,9 +32,7 @@ export const Header = () => {
           <div className={styles.headerLogo}>
             <img src={logo} alt="" className={styles.headerImg} />
             <Link to="/" className={styles.headerTitle}>
-              {/* // <a href="#" className={styles.headerTitle}> */}
               my library
-              {/* </a> */}
             </Link>
           </div>
           <div className={styles.headerRight}>
@@ -64,17 +62,11 @@ export const Header = () => {
                 onClick={() => setActiveCart(!activeCart)}
               />
               <div className={styles.totalCount}>{totalCount}</div>
-              {/* <div className={`${styles.cartOverlay} ${activeCart && styles.active} `}> */}
+
               <div className={`${styles.cartContent} ${activeCart && styles.active}`}>
                 <Cart setOpen={setActiveCart} />
-                {/* </div> */}
               </div>
             </div>
-            {/* {activeCart && (
-              <div className={`${styles.cartOverlay} ${styles.active} `}>
-                <Cart />
-              </div>
-            )} */}
           </div>
         </div>
       </div>

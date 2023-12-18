@@ -3,7 +3,7 @@ import style from './search.module.scss';
 import { useDispatch } from 'react-redux';
 import { searchBooks } from '../redux/slices/BookSlice';
 import { useNavigate } from 'react-router-dom';
-import { setCategory, setSearch } from '../redux/slices/filterSlice';
+import { setSearch } from '../redux/slices/filterSlice';
 
 export const Search = () => {
   const [searchValue, setValueSearch] = useState('');
@@ -14,7 +14,6 @@ export const Search = () => {
     e.preventDefault();
     dispatch(searchBooks(searchValue));
     dispatch(setSearch(searchValue));
-    //dispatch(setCategory(''));
     setValueSearch('');
     navigate('/search');
   };
