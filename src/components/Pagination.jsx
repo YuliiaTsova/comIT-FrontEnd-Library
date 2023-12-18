@@ -3,7 +3,9 @@ import style from './pagination.module.scss';
 
 export const Pagination = ({ current, total, setPage }) => {
   const dispatch = useDispatch();
-  console.log('currentPage', current);
+  if (total == 1) {
+    return null;
+  }
   return (
     <div className={style.pagination}>
       <ul className={`${style.list} listReset`}>

@@ -82,9 +82,12 @@
 }
 
 .emptyTitle {
+  text-align: center;
   font-size: rem(20);
 }
 
 .emptyImg {
+  display: block;
+  margin: 0 auto;
   margin-top: 20px;
 }

@@ -51,9 +51,9 @@ export const Trand = () => {
 
   return (
     <section className={style.trand} aria-label="tranding book">
-      <h2 className={`${style.title} heading2`}>Tranding books</h2>
+      <h2 className={`${style.title} heading2`}>Trending books</h2>
       <div className={style.content}>
-        <div className={`${style.more} viewMore`}>view more</div>
+        {/* <div className={`${style.more} viewMore`}>view more</div> */}
         <ul className={`${style.list} listReset`}>
           {items.map((el) => (
             <li className={style.item} key={el.bookId}>

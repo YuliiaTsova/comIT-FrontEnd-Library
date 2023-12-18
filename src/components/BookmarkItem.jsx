@@ -6,6 +6,7 @@ import { addBookmark, deleteBookmark } from '../redux/slices/bookmarkSlice.';
 import { ButtonBookmark } from './ButtonBookmark';
 import { ButtonHold } from './ButtonHold';
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 export const BookmarkItem = (props) => {
   const cartItems = useSelector((state) => state.cart.items);
@@ -49,7 +50,10 @@ export const BookmarkItem = (props) => {
   return (
     <li className={style.item} key={props.bookId}>
       <div className={style.cover}>
-        <img src={props.cover} alt="book cover" className={style.coverImg} />
+        {' '}
+        <Link to={`/book/${props.bookId}`}>
+          <img src={props.cover} alt="book cover" className={style.coverImg} />
+        </Link>
         {/* <img src={props.imageUrl} alt="pizza" /> */}
       </div>
       <article className={style.detail}>
