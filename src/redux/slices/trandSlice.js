@@ -9,10 +9,13 @@ const initialState = {
   status: 'loading', //loading, success, error
 };
 
-export const fetchTrandBooks = createAsyncThunk('trand/fetchTrandBooks', async () => {
-  const res = await axios.get('/books');
-  return res.data;
-});
+export const fetchTrandBooks = createAsyncThunk(
+  'https://bold-start-production.up.railway.app/trand/fetchTrandBooks',
+  async () => {
+    const res = await axios.get('/books');
+    return res.data;
+  }
+);
 
 export const fetchTrandBooksPagination = createAsyncThunk(
   'trand/fetchTrandBooksPagination',
