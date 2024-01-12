@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/comIT-FrontEnd-Library/static/css/main.7187abe7.css",
+    "main.js": "/comIT-FrontEnd-Library/static/js/main.4b1970c2.js",
+    "static/js/787.4dc8a817.chunk.js": "/comIT-FrontEnd-Library/static/js/787.4dc8a817.chunk.js",
+    "static/media/background-img.jpg": "/comIT-FrontEnd-Library/static/media/background-img.861636397482c2b58c04.jpg",
+    "static/media/success.png": "/comIT-FrontEnd-Library/static/media/success.05eee3f57d17f6a87ff2.png",
+    "static/media/user.svg": "/comIT-FrontEnd-Library/static/media/user.bd67195fd3428ac5ccc05a1b2456385a.svg",
+    "static/media/logo.svg": "/comIT-FrontEnd-Library/static/media/logo.e52ed9eb80065840318abc6f7296105e.svg",
+    "static/media/explore.svg": "/comIT-FrontEnd-Library/static/media/explore.29a4b49e70a67d46236c.svg",
+    "static/media/folder.svg": "/comIT-FrontEnd-Library/static/media/folder.ee10768dc6ca4bb9fcf9.svg",
+    "static/media/cart.svg": "/comIT-FrontEnd-Library/static/media/cart.e973a116fe82c7a33f1a4de505b03036.svg",
+    "static/media/more.svg": "/comIT-FrontEnd-Library/static/media/more.18fa09f1c10a76815c14.svg",
+    "index.html": "/comIT-FrontEnd-Library/index.html",
+    "static/media/bookmark.svg": "/comIT-FrontEnd-Library/static/media/bookmark.88cc87b50a04aa6eeadb65bd4dd2d379.svg",
+    "main.7187abe7.css.map": "/comIT-FrontEnd-Library/static/css/main.7187abe7.css.map",
+    "main.4b1970c2.js.map": "/comIT-FrontEnd-Library/static/js/main.4b1970c2.js.map",
+    "787.4dc8a817.chunk.js.map": "/comIT-FrontEnd-Library/static/js/787.4dc8a817.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7187abe7.css",
+    "static/js/main.4b1970c2.js"
+  ]
+}
