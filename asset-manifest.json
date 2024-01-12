@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/comIT-FrontEnd-Library/static/css/main.7187abe7.css",
-    "main.js": "/comIT-FrontEnd-Library/static/js/main.2ab734d1.js",
+    "main.js": "/comIT-FrontEnd-Library/static/js/main.fe72bafc.js",
     "static/js/787.4dc8a817.chunk.js": "/comIT-FrontEnd-Library/static/js/787.4dc8a817.chunk.js",
     "static/media/background-img.jpg": "/comIT-FrontEnd-Library/static/media/background-img.861636397482c2b58c04.jpg",
     "static/media/success.png": "/comIT-FrontEnd-Library/static/media/success.05eee3f57d17f6a87ff2.png",
@@ -14,11 +14,11 @@
     "index.html": "/comIT-FrontEnd-Library/index.html",
     "static/media/bookmark.svg": "/comIT-FrontEnd-Library/static/media/bookmark.88cc87b50a04aa6eeadb65bd4dd2d379.svg",
     "main.7187abe7.css.map": "/comIT-FrontEnd-Library/static/css/main.7187abe7.css.map",
-    "main.2ab734d1.js.map": "/comIT-FrontEnd-Library/static/js/main.2ab734d1.js.map",
+    "main.fe72bafc.js.map": "/comIT-FrontEnd-Library/static/js/main.fe72bafc.js.map",
     "787.4dc8a817.chunk.js.map": "/comIT-FrontEnd-Library/static/js/787.4dc8a817.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7187abe7.css",
-    "static/js/main.2ab734d1.js"
+    "static/js/main.fe72bafc.js"
   ]
 }
